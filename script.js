@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ctx.font = "20px 'Minecraftia'";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillText(name, 200, 140);
+        ctx.fillText(name, 210, 140);
         ctx.font = "16px 'Minecraftia'";
         ctx.fillText(cardId, 280, 225);
         ctx.fillText(house, 280, 285);
