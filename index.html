@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fire Nation ID Card Creator</title>
+    <title>Earth Kingdom ID Card Creator</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" />
 </head>
 <body>
     <header>
-        <h1>Fire Nation ID Card Creator</h1>
+        <h1>Earth Kingdom ID Card Creator</h1>
     </header>
     <div class="container">
         <div class="editor">
@@ -22,12 +22,28 @@
                     <input type="text" id="name" name="name" value="Name">
                 </div>
                 <div class="form-group">
+                    <label for="cardId">Card ID:</label>
+                    <input type="text" id="cardId" name="cardId" value="Card ID">
+                </div>
+                <div class="form-group">
+                    <label for="house">House:</label>
+                    <input type="text" id="house" name="house" value="House">
+                </div>
+                <div class="form-group">
                     <label for="birthYear">Birth Year:</label>
                     <input type="text" id="birthYear" name="birthYear" value="Birth Year">
                 </div>
                 <div class="form-group">
                     <label for="gender">Gender:</label>
                     <input type="text" id="gender" name="gender" value="Gender">
+                </div>
+                <div class="form-group">
+                    <label for="element">Element:</label>
+                    <input type="text" id="element" name="element" value="Element">
+                </div>
+                <div class="form-group">
+                    <label for="affinities">Affinities:</label>
+                    <input type="text" id="affinities" name="affinities" value="Affinities">
                 </div>
                 <div class="form-group">
                     <label for="province">Province:</label>
@@ -37,50 +53,44 @@
                         <div class="options-container">
                             <input type="text" class="search-box" placeholder="Search..." onkeyup="filterOptions(this)">
                             <div class="options">
-                                <div class="option" onclick="selectOption(this)">Ember</div>
-                                <div class="option" onclick="selectOption(this)">Hamamatsu</div>
-                                <div class="option" onclick="selectOption(this)">Imagawa</div>
-                                <div class="option" onclick="selectOption(this)">Hiseki</div>
-                                <div class="option" onclick="selectOption(this)">Yuyan</div>
-                                <div class="option" onclick="selectOption(this)">Hari Bulkan</div>
-                                <div class="option" onclick="selectOption(this)">Wansai</div>
-                                <div class="option" onclick="selectOption(this)">Kagutsuchi</div>
-                                <div class="option" onclick="selectOption(this)">Tohayashi</div>
-                                <div class="option" onclick="selectOption(this)">Shuhon</div>
-                                <div class="option" onclick="selectOption(this)">Nozawa</div>
-                                <div class="option" onclick="selectOption(this)">Hunodeshima</div>
+                                <div class="option" onclick="selectOption(this)">Ba Sing Se</div>
+                                <div class="option" onclick="selectOption(this)">Cheng</div>
+                                <div class="option" onclick="selectOption(this)">Chulin</div>
+                                <div class="option" onclick="selectOption(this)">Chunying</div>
+                                <div class="option" onclick="selectOption(this)">Daoyu</div>
+                                <div class="option" onclick="selectOption(this)">Gaoling</div>
+                                <div class="option" onclick="selectOption(this)">Gintong</div>
+                                <div class="option" onclick="selectOption(this)">Izaki/Zaofu</div>
+                                <div class="option" onclick="selectOption(this)">Kyoshi Island</div>
+                                <div class="option" onclick="selectOption(this)">Omashu</div>
+                                <div class="option" onclick="selectOption(this)">Republic City</div>
+                                <div class="option" onclick="selectOption(this)">Senlin</div>
+                                <div class="option" onclick="selectOption(this)">Sha Ying</div>
+                                <div class="option" onclick="selectOption(this)">Wei Gong</div>
+                                <div class="option" onclick="selectOption(this)">Yang</div>
+                                <div class="option" onclick="selectOption(this)">Yi</div>
+                                <div class="option" onclick="selectOption(this)">Yousheng</div>
+                                <div class="option" onclick="selectOption(this)">Yu Dao</div>
+                                <div class="option" onclick="selectOption(this)">Zeizhou</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- The rest of the form fields -->
                 <div class="form-group">
-                    <label for="element">Element:</label>
-                    <input type="text" id="element" name="element" value="Element">
+                    <label for="profession">Profession:</label>
+                    <input type="text" id="profession" name="profession" value="Profession">
                 </div>
                 <div class="form-group">
-                    <label for="rank">Rank:</label>
-                    <input type="text" id="rank" name="rank" value="Rank">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" value="Username">
                 </div>
                 <div class="form-group">
-                    <label for="affinities">Affinities:</label>
-                    <input type="text" id="affinities" name="affinities" value="Affinities">
+                    <label for="discord">Discord:</label>
+                    <input type="text" id="discord" name="discord" value="Discord">
                 </div>
                 <div class="form-group">
-                    <label for="branches">Branches:</label>
-                    <input type="text" id="branches" name="branches" value="Branches">
-                </div>
-                <div class="form-group">
-                    <label for="mcUsername">MC Username:</label>
-                    <input type="text" id="mcUsername" name="mcUsername" value="MC Username">
-                </div>
-                <div class="form-group">
-                    <label for="minorOrAdult">Minor or Adult:</label>
-                    <input type="text" id="minorOrAdult" name="minorOrAdult" value="Minor or Adult">
-                </div>
-                <div class="form-group">
-                    <label for="cardId">Card ID:</label>
-                    <input type="text" id="cardId" name="cardId" value="Card ID">
+                    <label for="ageGroup">Minor or Adult:</label>
+                    <input type="text" id="ageGroup" name="ageGroup" value="Minor or Adult">
                 </div>
                 <div class="form-group">
                     <label for="uploadImage">Upload Image:</label>

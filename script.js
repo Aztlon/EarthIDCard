@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const canvas = document.getElementById('idCardCanvas');
     const ctx = canvas.getContext('2d');
     const image = new Image();
-    image.src = 'FN_ID_Card.png';
+    image.src = 'EKID.png';
 
     image.onload = function() {
         canvas.width = image.width;
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
             reader.onload = function(e) {
                 if (!croppieInstance) {
                     croppieInstance = new Croppie(document.getElementById('croppieContainer'), {
-                        viewport: { width: 200, height: 200, type: 'square' },
+                        viewport: { width: 200, height: 200, type: 'circle' },
                         boundary: { width: 300, height: 300 },
                         enableOrientation: true,
                         showZoomer: true,
@@ -88,65 +88,54 @@ document.addEventListener("DOMContentLoaded", function() {
         ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
         ctx.font = "14px 'Minecraftia'";
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "white";
 
         const name = document.getElementById('name').value;
+        const cardId = document.getElementById('cardId').value;
+        const house = document.getElementById('house').value;
         const birthYear = document.getElementById('birthYear').value;
         const gender = document.getElementById('gender').value;
-        const province = document.querySelector('.custom-select .selected').textContent;
         const element = document.getElementById('element').value;
-        const rank = document.getElementById('rank').value;
         const affinities = document.getElementById('affinities').value;
-        const branches = document.getElementById('branches').value;
-        const mcUsername = document.getElementById('mcUsername').value;
-        const minorOrAdult = document.getElementById('minorOrAdult').value;
-        const cardId = document.getElementById('cardId').value;
+        const province = document.querySelector('.custom-select .selected').textContent;
+        const profession = document.getElementById('profession').value;
+        const username = document.getElementById('username').value;
+        const discord = document.getElementById('discord').value;
+        const ageGroup = document.getElementById('ageGroup').value;
 
-        const nameMaxWidth = 145;
-        const nameX = 100;
-        const nameY = 123;
         const lineHeight = 18;
 
-        // Wrap text for 'name'
-        const nameLines = wrapText(ctx, name, nameX, nameY, nameMaxWidth, lineHeight);
-        const nameHeight = nameLines.length * lineHeight;
-
-        let adjustedNameY = nameY;
-        if (nameLines.length > 1) {
-            adjustedNameY = nameY - ((nameLines.length - 1) * lineHeight);
-        }
-
-        nameLines.forEach((line, index) => {
-            ctx.fillText(line, nameX, adjustedNameY + (index * lineHeight));
-        });
-
-        ctx.fillText(birthYear, 145, 145);
-        ctx.fillText(gender, 120, 170);
-        ctx.fillText(province, 140, 190);
-        ctx.fillText(element, 130, 265);
-        ctx.fillText(rank, 320, 265);
-
+        ctx.fillText(birthYear, 175, 345);
+        ctx.fillText(gender, 135, 375);
+        ctx.fillText(element, 135, 410);
         // affinities
         const affinitiesMaxWidth = 115;
-        const affinitiesX = 140;
-        const affinitiesY = 290;
+        const affinitiesX = 150;
+        const affinitiesY = 445;
         const affinitiesLines = wrapText(ctx, affinities, affinitiesX, affinitiesY, affinitiesMaxWidth, lineHeight);
         affinitiesLines.forEach((line, index) => {
             ctx.fillText(line, affinitiesX, affinitiesY + (index * lineHeight));
         });
+        ctx.fillText(province, 145, 475);
+        ctx.fillText(profession, 160, 510);
 
-        // Branches
-        const branchesMaxWidth = 105;
-        const branchesX = 360;
-        const branchesY = 290;
-        const branchesLines = wrapText(ctx, branches, branchesX, branchesY, branchesMaxWidth, lineHeight);
-        branchesLines.forEach((line, index) => {
-            ctx.fillText(line, branchesX, branchesY + (index * lineHeight));
-        });
+        ctx.fillText(username, 90, 585);
+        ctx.fillText(discord, 135, 620);
+        ctx.fillText(ageGroup, 155, 650);
 
-        ctx.fillText(mcUsername, 180, 375);
-        ctx.fillText(minorOrAdult, 195, 403);
-        ctx.fillText(cardId, 145, 587);
+        // Draw name in a center-aligned textbox at (200, 140) with 20px font
+        ctx.save();
+        ctx.font = "20px 'Minecraftia'";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "black";
+        ctx.fillRect(100, 120, 200, 40); // Draw textbox background (optional, remove if not needed)
+        ctx.fillStyle = "white"; // Text color for contrast on black box
+        ctx.fillText(name, 200, 140);
+        ctx.font = "16px 'Minecraftia'";
+        ctx.fillText(cardId, 280, 225);
+        ctx.fillText(house, 280, 285);
+        ctx.restore();
 
         if (userImage) {
             ctx.drawImage(userImage, 243, 53, 170, 165);
@@ -157,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
         updateIDCard();
         const link = document.createElement('a');
         link.href = canvas.toDataURL('image/png');
-        link.download = 'FN_ID_Card.png';
+        link.download = 'EK_ID.png';
         link.click();
     });
 
