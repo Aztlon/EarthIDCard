@@ -108,14 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ctx.fillText(birthYear, 175, 345);
         ctx.fillText(gender, 135, 375);
         ctx.fillText(element, 135, 410);
-        // affinities
-        const affinitiesMaxWidth = 190;
-        const affinitiesX = 150;
-        const affinitiesY = 445;
-        const affinitiesLines = wrapText(ctx, affinities, affinitiesX, affinitiesY, affinitiesMaxWidth, lineHeight);
-        affinitiesLines.forEach((line, index) => {
-            ctx.fillText(line, affinitiesX, affinitiesY + (index * lineHeight));
-        });
+        ctx.fillText(affinities, 150, 445);
         ctx.fillText(province, 145, 475);
         ctx.fillText(profession, 160, 510);
 
