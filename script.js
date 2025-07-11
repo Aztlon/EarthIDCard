@@ -61,28 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('idCardForm').addEventListener('input', updateIDCard);
 
-    function wrapText(context, text, x, y, maxWidth, lineHeight) {
-        let words = text.split(' ');
-        let line = '';
-        let lines = [];
-
-        words.forEach((word) => {
-            let testLine = line + word + ' ';
-            let metrics = context.measureText(testLine);
-            let testWidth = metrics.width;
-
-            if (testWidth > maxWidth && line !== '') {
-                lines.push(line);
-                line = word + ' ';
-            } else {
-                line = testLine;
-            }
-        });
-
-        lines.push(line.trim());  
-        return lines;
-    }
-
     function updateIDCard() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
@@ -102,8 +80,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const username = document.getElementById('username').value;
         const discord = document.getElementById('discord').value;
         const ageGroup = document.getElementById('ageGroup').value;
-
-        const lineHeight = 18;
 
         ctx.fillText(birthYear, 175, 345);
         ctx.fillText(gender, 135, 375);
