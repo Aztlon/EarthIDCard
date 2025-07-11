@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
             reader.onload = function(e) {
                 if (!croppieInstance) {
                     croppieInstance = new Croppie(document.getElementById('croppieContainer'), {
-                        viewport: { width: 63, height: 293, type: 'circle' },
+                        viewport: { width: 200, height: 200, type: 'circle' },
                         boundary: { width: 300, height: 300 },
                         enableOrientation: true,
                         showZoomer: true,
@@ -128,8 +128,6 @@ document.addEventListener("DOMContentLoaded", function() {
         ctx.font = "20px 'Minecraftia'";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillRect(100, 120, 200, 40); // Draw textbox background (optional, remove if not needed)
-        ctx.fillStyle = "white"; // Text color for contrast on black box
         ctx.fillText(name, 200, 140);
         ctx.font = "16px 'Minecraftia'";
         ctx.fillText(cardId, 280, 225);
@@ -137,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ctx.restore();
 
         if (userImage) {
-            ctx.drawImage(userImage, 243, 53, 170, 165);
+            ctx.drawImage(userImage, 63, 158, 135, 135);
         }
     }
 
