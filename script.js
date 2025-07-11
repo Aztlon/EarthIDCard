@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
             reader.onload = function(e) {
                 if (!croppieInstance) {
                     croppieInstance = new Croppie(document.getElementById('croppieContainer'), {
-                        viewport: { width: 200, height: 200, type: 'circle' },
+                        viewport: { width: 63, height: 293, type: 'circle' },
                         boundary: { width: 300, height: 300 },
                         enableOrientation: true,
                         showZoomer: true,
@@ -128,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function() {
         ctx.font = "20px 'Minecraftia'";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillStyle = "black";
         ctx.fillRect(100, 120, 200, 40); // Draw textbox background (optional, remove if not needed)
         ctx.fillStyle = "white"; // Text color for contrast on black box
         ctx.fillText(name, 200, 140);
